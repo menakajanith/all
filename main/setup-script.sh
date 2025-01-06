@@ -19,17 +19,17 @@ sudo ufw allow ssh
 sudo systemctl enable firewalld
 
 # Step 7: Clone your GitHub repository
-git clone https://github.com/menakajanith/setup-script.git
+git clone https://github.com/menakajanith/all.git
 
 # Step 8: Move the cloned repository to /var/www/setup-script
-sudo mv test /var/www/setup-script
+sudo mv test /var/www/all
 
 # Step 9: Create Apache VirtualHost configuration file
 sudo bash -c 'cat > /etc/apache2/sites-available/menakajanith.cloud.conf << EOF
 <VirtualHost *:80>
     ServerName www.menakajanith.cloud
     ServerAdmin contact@menakajanith.cloud
-    DocumentRoot /var/www/setup-script
+    DocumentRoot /var/www/all
     ErrorLog \${APACHE_LOG_DIR}/error.log
     CustomLog \${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
